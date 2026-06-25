@@ -6,14 +6,14 @@ function PokemonCard({pokeInfo}) {
   const {id, name, hp, sprites} = pokeInfo
 
   function handleClick() {
-    setSprite(prevSprit => sprite === "front" ? "back" : "front")
+    setSprite(prevSprit => prevSprit === "front" ? "back" : "front")
   }
   
   return (
     <Card>
       <div onClick={handleClick}>
         <div className="image">
-          <img alt="oh no!" src={sprites[sprite]}/>
+          <img alt={name} src={sprites[sprite]}/>
         </div>
         <div className="content">
           <div className="header">{name}</div>

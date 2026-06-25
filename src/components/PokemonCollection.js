@@ -3,7 +3,7 @@ import PokemonCard from "./PokemonCard";
 import { Card } from "semantic-ui-react";
 
 function PokemonCollection({pokeList, searchTerm}) {
-  const pokemonToDisplay = searchTerm ? pokeList.filter(poke => poke.name.includes(searchTerm)) : pokeList
+  const pokemonToDisplay = searchTerm ? pokeList.filter(poke => poke.name.includes(searchTerm.toLowerCase())) : pokeList
 
   return (
     <Card.Group itemsPerRow={6}>

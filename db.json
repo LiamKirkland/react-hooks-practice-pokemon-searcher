@@ -1349,6 +1349,15 @@
         "back": "https://img.pokemondb.net/sprites/black-white/back-normal/bulbasaur.png"
       },
       "id": 151
+    },
+    {
+      "name": "typhlosion",
+      "hp": 85,
+      "sprites": {
+        "front": "https://img.pokemondb.net/sprites/black-white/normal/typhlosion.png",
+        "back": "https://img.pokemondb.net/sprites/black-white/back-normal/typhlosion.png"
+      },
+      "id": 152
     }
   ]
 }

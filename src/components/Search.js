@@ -5,7 +5,7 @@ function Search({onSetSearch}) {
   return (
     <div className="ui search">
       <div className="ui icon input">
-        <input className="prompt" onChange={e => onSetSearch(prevSearch => e.target.value)}/>
+        <input className="prompt" onChange={e => onSetSearch(e.target.value)}/>
         <i className="search icon" />
       </div>
     </div>

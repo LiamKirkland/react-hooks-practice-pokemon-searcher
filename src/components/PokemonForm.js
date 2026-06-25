@@ -10,17 +10,15 @@ function PokemonForm({onSetPokeList}) {
   }
   const [formData, setFormData] = useState(blankState)
 
-  function handleSubmit(e) {
-    const submitedData = Object.fromEntries(new FormData(e.currentTarget))
+  function handleSubmit() {
     const newPokemon = {
-      name: submitedData.name,
-      hp: +submitedData.hp,
+      name: formData.name,
+      hp: +formData.hp,
       sprites: {
-        front: submitedData.frontUrl,
-        back: submitedData.backUrl
+        front: formData.frontUrl,
+        back: formData.backUrl
       }
     }
-    
 
     fetch("http://localhost:3001/pokemon", {
     method: 'POST',
@@ -30,6 +28,7 @@ function PokemonForm({onSetPokeList}) {
     .then(res => res.json())
     .then(dbPoke => {
       onSetPokeList(prevList => [...prevList, dbPoke])
+      setFormData(blankState)
     })
   }
   function handleChange(e, {name, value}) {
