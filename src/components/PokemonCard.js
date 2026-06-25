@@ -8,7 +8,7 @@ function PokemonCard({pokeInfo}) {
   function handleClick() {
     setSprite(prevSprit => sprite === "front" ? "back" : "front")
   }
-  // console.log(pokeInfo)
+  
   return (
     <Card>
       <div onClick={handleClick}>
