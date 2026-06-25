@@ -2,12 +2,12 @@ import React from "react";
 import PokemonCard from "./PokemonCard";
 import { Card } from "semantic-ui-react";
 
-function PokemonCollection({pokeList}) {
-  const pokemonToDisplay = pokeList
+function PokemonCollection({pokeList, searchTerm}) {
+  const pokemonToDisplay = searchTerm ? pokeList.filter(poke => poke.name.includes(searchTerm)) : pokeList
 
   return (
     <Card.Group itemsPerRow={6}>
-      {pokemonToDisplay.map(poke => <PokemonCard poke={poke} key={poke.id}/>)}
+      {pokemonToDisplay.map(poke => <PokemonCard pokeInfo={poke} key={poke.id}/>)}
     </Card.Group>
   );
 }

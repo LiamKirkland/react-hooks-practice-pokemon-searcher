@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Card } from "semantic-ui-react";
 
-function PokemonCard({poke}) {
+function PokemonCard({pokeInfo}) {
   const [sprite, setSprite] = useState("front")
-  const {id, name, hp, sprites} = poke
+  const {id, name, hp, sprites} = pokeInfo
 
   function handleClick() {
-    setSprite(sprite === "front" ? "back" : "front")
+    setSprite(prevSprit => sprite === "front" ? "back" : "front")
   }
-  console.log(poke)
+  // console.log(pokeInfo)
   return (
     <Card>
       <div onClick={handleClick}>
